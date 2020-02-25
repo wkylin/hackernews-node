@@ -1,32 +1,5 @@
 const { GraphQLServer } = require('graphql-yoga');
 
-const typeDefs = `
-    type Query{
-        info:String!
-        users: [User!]!
-        user(id:ID!): User
-        feed: [Link!]!
-        link(id: ID!): Link
-    }
-
-    type Mutation {
-        createUser(name:String!): User!
-        post(url:String!, description:String!): Link!
-        updateLink(id:ID!, url:String!, description: String!): Link
-        deleteLink(id: ID!): Link
-    }
-
-    type User{
-        id: ID!
-        name: String!
-    }
-
-    type Link {
-        id: ID!
-        description: String!
-        url: String!
-    }
-`
 
 let links = [
     {
@@ -68,7 +41,7 @@ const resolvers = {
 
 
 const server = new GraphQLServer({
-    typeDefs,
+    typeDefs: './src/schema.graphql',
     resolvers
 })
 
