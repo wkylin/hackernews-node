@@ -2,3 +2,11 @@
 
 # Project exclude paths
 /node_modules/
+.idea
+.gitignore
+.idea/.gitignore
+.idea/codeStyles/
+.idea/dbnavigator.xml
+.idea/hackernews-node.iml
+.idea/misc.xml
+.idea/modules.xml
